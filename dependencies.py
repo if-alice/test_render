@@ -5,12 +5,12 @@ from urllib import parse
 from settings import Settings
 
 
-@lru_cache
+@lru_cache()
 def get_settings():
     return Settings()
 
 
-@lru_cache
+@lru_cache()
 def get_redis() -> Redis:
     url = parse.urlparse(get_settings().REDIS_URL)
     return Redis(host=url.hostname)

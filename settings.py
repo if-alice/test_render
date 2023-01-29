@@ -3,7 +3,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     REDIS_URL: str
-    POSTGRES_URL: str
+    POSTGRES_URL: str = None
 
     class Config:
         env_file = '.env'
